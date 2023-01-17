@@ -4,7 +4,8 @@ import "../styles/Header.css";
 import Login from "./Login";
 import LoggedIn from "./LoggedIn";
 
-function Header({loggedIn,setLoggedIn}) {
+
+function Header({facade, loggedIn,setLoggedIn}) {
   const init = {username: "", password: ""};
     const [loginCredentials, setLoginCredentials] = useState(init);
 
@@ -13,10 +14,11 @@ function Header({loggedIn,setLoggedIn}) {
       <nav className="topnav">
         <div className="nav-menu">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/test">Test</NavLink>
-          <NavLink to="/test2">Test2</NavLink>
-          <NavLink to="/test3">Test3</NavLink>
-          <NavLink to="/test4">Test4</NavLink>
+          {facade.hasUserAccess('user', loggedIn) && (
+            <NavLink to="/match">
+              MatchInfo
+            </NavLink>
+        )}
           <div className="login-container">
           {!loggedIn ? (<Login setLoggedIn={setLoggedIn} loginCredentials={loginCredentials} setLoginCredentials={setLoginCredentials}  />) :
                 (<div>

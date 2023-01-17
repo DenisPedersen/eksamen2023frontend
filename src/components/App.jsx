@@ -5,6 +5,9 @@ import Header from "./Header"
 import Footer from './Footer'
 import Home from './Home'
 import SignUp from './SignUp'
+import Match from './Match'
+import facade from "../utils/loginFacade";
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -12,12 +15,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>
+      <Header facade={facade} setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>
 
       
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp/>} />
+        <Route path="/match" element={<Match/>} />
+
       </Routes>
       <Footer/>
       </BrowserRouter>
