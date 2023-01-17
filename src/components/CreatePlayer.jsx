@@ -2,18 +2,28 @@ import React from 'react'
 import { useState } from 'react'
 import { ApiPost } from '../utils/apiFetcher'
 
-const CreatePlayer = () => {
+const CreatePlayer = ({onChange}) => {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
     const [status, setStatus] = useState('kampklar')
-    const [player, setPlayer] = useState()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const newPlayer = {name, phone, email, status}
+        var newPlayer = {
+            "name": name,
+            "phone": phone,
+            "email": email,
+            "status": status
+        }
+        const player = {name, phone, email, status}
 
-        ApiPost('player/', newPlayer, setPlayer)
+        fetch('http://localhost:8080/devops_starter_war_exploded/api/player/', {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: newPlayer
+         })
+        //ApiPost('player/', newPlayer, setPlayer)
     }
 
   return (
