@@ -1,9 +1,10 @@
 import React from 'react'
+import Player from './Player'
 
 const Home = () => {
   return (
     <div>
-        <h3>Home</h3>
+        <h3><Player/></h3>
       
     </div>
   )
