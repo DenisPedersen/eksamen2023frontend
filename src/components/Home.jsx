@@ -4,7 +4,7 @@ import Player from './Player'
 const Home = () => {
   return (
     <div>
-        <h3><Player/></h3>
+        <h3>Log ind i toppen for at tilgå menuerne</h3>
       
     </div>
   )

@@ -9,8 +9,7 @@ import Match from './Match'
 import facade from "../utils/loginFacade";
 import Player from './Player'
 import Admin from './Admin'
-import CreatePlayer from './CreatePlayer'
-
+import EditPlayer from './EditPlayer'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -27,7 +26,7 @@ function App() {
         <Route path="/match" element={<Match/>} />
         <Route path="/player" element={<Player/>} />
         <Route path="/admin" element={<Admin/>} />
-        <Route path="/create-player" element={<CreatePlayer/>} />
+        <Route path="/create-player" element={<EditPlayer/>} />
 
 
 

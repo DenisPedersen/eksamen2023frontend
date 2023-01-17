@@ -1,14 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
-import { ApiPost } from '../utils/apiFetcher'
+import { ApiDelete, ApiPost } from '../utils/apiFetcher'
 import { initialPlayer } from '../utils/initialState'
+import { useNavigate } from 'react-router-dom'
 
-const CreatePlayer = ({onChange}) => {
+const EditPlayer = ({onChange}) => {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
     const [status, setStatus] = useState('kampklar')
     const [player, setPlayer] = useState(initialPlayer);
+    const navigate = useNavigate()
+    const [changeOccured, setChangeOccured] = useState(false)
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -31,10 +35,12 @@ const CreatePlayer = ({onChange}) => {
             body: newPlayer
          }) */
         ApiPost('player/', setPlayer, player)
+        navigate('/')
     }
+   
 
   return (
-    <div className='createPlayer'>
+    <div className='edit-player'>
         <h2>Her kan du oprette en ny spiller.</h2>
         <form onSubmit={handleSubmit}>
             <label>Navn: </label>
@@ -63,8 +69,9 @@ const CreatePlayer = ({onChange}) => {
         </form>
 
 
+
     </div>
   )
 }
 
-export default CreatePlayer
+export default EditPlayer

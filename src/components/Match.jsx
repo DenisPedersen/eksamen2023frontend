@@ -1,14 +1,16 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import { ApiGet } from '../utils/apiFetcher'
+import { ApiGet, ApiPut } from '../utils/apiFetcher'
+import Player from './Player'
 
 
-const Match = () => {
+const Match = ({match}) => {
 
     const [matches ,setMatches] = useState({})
     const [matchesOnSpecificLocation, setMatchesOnLocation] = useState([{}])
     const [selectedMatch, setSelectedMatch] = useState(0)
     const [location, setLocation] = useState()
+    const [updatedMatch, setUpdatedMatch] = useState(match)
 
     const getMatches = () => {
         ApiGet("match", setMatches)
@@ -86,6 +88,8 @@ const Match = () => {
             )))}
             </table>
             </div>}
+
+            <Player/>
     </div>
   )
 }
