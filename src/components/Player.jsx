@@ -15,7 +15,7 @@ const Player = () => {
       }
 
   return (
-    <div>
+    <div className='details'>
         <label>
           Vælg en spiller for at se alle de kampe vedkommende skal deltage i
        <select value={selectedPlayer} onChange={handleChange}>

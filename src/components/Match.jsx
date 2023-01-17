@@ -11,6 +11,8 @@ const Match = ({match}) => {
     const [selectedMatch, setSelectedMatch] = useState(0)
     const [location, setLocation] = useState()
     const [updatedMatch, setUpdatedMatch] = useState(match)
+    const [showForm, setShowForm] = useState(false)
+
 
     const getMatches = () => {
         ApiGet("match", setMatches)
@@ -23,12 +25,15 @@ const Match = ({match}) => {
         const id = selectedMatch.id
         ApiGet("match/location/" + selectedMatch, setMatchesOnLocation)
       }
+      const onClick = () => {
+        setShowForm(!showForm)
+      }
 
 
   return (
-    <div>
+    <div className='details'>
     <br/>
-
+  
         <label>
           Vælg en by for at se alle de kampe som skal spilles der
        <select value={selectedMatch} onChange={handleChange}>

@@ -59,7 +59,7 @@ const EditLocation = () => {
 
 
   return (
-    <div>
+    <div className='create'>
        {/*  <div>
            {!showForm &&
       <button className='show-edit-form' onClick={onClick}>Rediger lokation</button> }

@@ -12,6 +12,8 @@ const EditPlayer = ({onChange}) => {
     const [player, setPlayer] = useState(initialPlayer);
     const navigate = useNavigate()
     const [changeOccured, setChangeOccured] = useState(false)
+    const [showForm, setShowForm] = useState(false)
+
 
 
     const handleSubmit = (e) => {
@@ -37,11 +39,20 @@ const EditPlayer = ({onChange}) => {
         ApiPost('player/', setPlayer, player)
         navigate('/')
     }
+    const onClick = () => {
+        setShowForm(!showForm)
+      }
+
    
 
   return (
-    <div className='edit-player'>
-        <h2>Her kan du oprette en ny spiller.</h2>
+    <div className='create'>
+        <div>
+    {!showForm && 
+    <button className='show-edit-form' onClick={onClick}>Opret ny spiller</button>}
+    </div>
+    {showForm && 
+  <div>
         <form onSubmit={handleSubmit}>
             <label>Navn: </label>
             <input type="text"
@@ -68,7 +79,8 @@ const EditPlayer = ({onChange}) => {
             <button>Tilføj spiller</button>
         </form>
 
-
+</div>
+    }
 
     </div>
   )

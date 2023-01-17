@@ -1,0 +1,9 @@
+body.home {
+    background-image: url("https://img.freepik.com/free-photo/sports-tools_53876-138077.jpg?w=996&t=st=1673992082~exp=1673992682~hmac=a0911299ddea5d927f6a9a4eab8bb34590b23e3e4529da91ad8d53cc72296481");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 85%;
+    background-color: #455de7;
+    background-blend-mode: hard-light
+}
