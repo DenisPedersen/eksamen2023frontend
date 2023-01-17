@@ -8,6 +8,7 @@ import SignUp from './SignUp'
 import Match from './Match'
 import facade from "../utils/loginFacade";
 import Player from './Player'
+import Admin from './Admin'
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/match" element={<Match/>} />
         <Route path="/player" element={<Player/>} />
+        <Route path="/admin" element={<Admin/>} />
+
 
       </Routes>
       <Footer/>

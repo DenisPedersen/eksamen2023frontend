@@ -19,6 +19,11 @@ function Header({facade, loggedIn,setLoggedIn}) {
               MatchInfo
             </NavLink>
         )}
+        {facade.hasUserAccess('admin', loggedIn) && (
+            <NavLink to="/admin">
+              Adminpage
+            </NavLink>
+        )}
           <div className="login-container">
           {!loggedIn ? (<Login setLoggedIn={setLoggedIn} loginCredentials={loginCredentials} setLoginCredentials={setLoginCredentials}  />) :
                 (<div>
