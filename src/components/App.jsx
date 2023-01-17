@@ -9,6 +9,7 @@ import Match from './Match'
 import facade from "../utils/loginFacade";
 import Player from './Player'
 import Admin from './Admin'
+import CreatePlayer from './CreatePlayer'
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
         <Route path="/match" element={<Match/>} />
         <Route path="/player" element={<Player/>} />
         <Route path="/admin" element={<Admin/>} />
+        <Route path="/create-player" element={<CreatePlayer/>} />
+
 
 
       </Routes>
