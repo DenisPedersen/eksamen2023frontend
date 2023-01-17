@@ -1,29 +1,36 @@
 import React from 'react'
 import { useState } from 'react'
 import { ApiPost } from '../utils/apiFetcher'
+import { initialPlayer } from '../utils/initialState'
 
 const CreatePlayer = ({onChange}) => {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
     const [status, setStatus] = useState('kampklar')
+    const [player, setPlayer] = useState(initialPlayer);
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        var newPlayer = {
+       /*  var newPlayer = {
             "name": name,
             "phone": phone,
             "email": email,
             "status": status
-        }
-        const player = {name, phone, email, status}
+        } */
+        let newPlayer = player
+        newPlayer.name = name;
+        newPlayer.phone = phone;
+        newPlayer.email = email;
+        newPlayer.status = status;
+        setPlayer(newPlayer)
 
-        fetch('http://localhost:8080/devops_starter_war_exploded/api/player/', {
+        /* fetch('http://localhost:8080/devops_starter_war_exploded/api/player/', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: newPlayer
-         })
-        //ApiPost('player/', newPlayer, setPlayer)
+         }) */
+        ApiPost('player/', setPlayer, player)
     }
 
   return (
