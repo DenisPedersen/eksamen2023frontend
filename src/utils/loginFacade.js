@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/devops_starter_war_exploded";
+const URL = "http://localhost:8080/sportsmatch_war_exploded";
  
 function handleHttpErrors(res) {
  if (!res.ok) {

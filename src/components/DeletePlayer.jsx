@@ -14,11 +14,11 @@ const DeletePlayer = () => {
       }
 
     useEffect(() => {
-        fetch('http://localhost:8080/devops_starter_war_exploded/api/player').then((data) => data.json()).then((value) => setPlayers(value))
+        fetch('http://localhost:8080/sportsmatch_war_exploded/api/player').then((data) => data.json()).then((value) => setPlayers(value))
     })
 
     const deletePlayer= async(id) => {
-        await fetch (`http://localhost:8080/devops_starter_war_exploded/api/player/${id}`,  {
+        await fetch (`http://localhost:8080/sportsmatch_war_exploded/api/player/${id}`,  {
             method: 'DELETE'
         })
     }

@@ -14,11 +14,11 @@ const DeleteLocation = () => {
         setShowForm(!showForm)
       }
     useEffect(() => {
-        fetch('http://localhost:8080/devops_starter_war_exploded/api/location').then((data) => data.json()).then((value) => setLocations(value))
+        fetch('http://localhost:8080/sportsmatch_war_exploded/api/location').then((data) => data.json()).then((value) => setLocations(value))
     })
 
     const deleteLocation = async(id) => {
-        await fetch (`http://localhost:8080/devops_starter_war_exploded/api/location/${id}`,  {
+        await fetch (`http://localhost:8080/sportsmatch_war_exploded/api/location/${id}`,  {
             method: 'DELETE'
         })
     }
