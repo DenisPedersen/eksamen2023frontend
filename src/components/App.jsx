@@ -12,6 +12,8 @@ import Admin from './Admin'
 import EditPlayer from './EditPlayer'
 import EditLocation from './EditLocation'
 import EditMatch from './EditMatch'
+import DeleteLocation from './DeleteLocation'
+import DeletePlayer from './DeletePlayer'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -31,6 +33,8 @@ function App() {
         <Route path="/edit-player" element={<EditPlayer/>} />
         <Route path="/edit-location" element={<EditLocation/>} />
         <Route path="/edit-match" element={<EditMatch/>} />
+        <Route path="/delete-location" element={<DeleteLocation/>} />
+        <Route path="/delete-player" element={<DeletePlayer/>} />
 
 
 

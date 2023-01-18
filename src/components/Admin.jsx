@@ -3,6 +3,8 @@ import { useState } from 'react'
 import EditPlayer from './EditPlayer'
 import EditLocation from './EditLocation'
 import EditMatch from './EditMatch'
+import DeleteLocation from './DeleteLocation'
+import DeletePlayer from './DeletePlayer'
 
 const Admin = ({match, setMatch}) => {
     
@@ -14,6 +16,8 @@ const Admin = ({match, setMatch}) => {
         <EditLocation/>
         <EditPlayer/>
         <EditMatch />
+        <DeleteLocation />
+        <DeletePlayer />
       
     </div>
   )
