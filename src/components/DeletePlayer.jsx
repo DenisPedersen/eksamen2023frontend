@@ -25,7 +25,7 @@ const DeletePlayer = () => {
 
 
   return (
-    <div>
+    <div className='details'>
         <div>
         {!showForm && 
         <button className='show-matches-for-player' onClick={onClick}>Se liste over alle spillere</button> }

@@ -18,6 +18,7 @@ const Admin = ({match, setMatch}) => {
         <EditMatch />
         <DeleteLocation />
         <DeletePlayer />
+        
       
     </div>
   )
